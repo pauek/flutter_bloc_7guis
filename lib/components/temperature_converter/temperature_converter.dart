@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_7guis/components/temperature_converter_bloc.dart';
+import 'package:flutter_bloc_7guis/components/temperature_converter/temperature_converter_bloc.dart';
 
 class TemperatureConverter extends StatelessWidget {
   const TemperatureConverter({Key? key}) : super(key: key);
