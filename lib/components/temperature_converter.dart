@@ -58,7 +58,7 @@ class _EditorState extends State<_Editor> {
   @override
   Widget build(BuildContext context) {
     final bloc = context.watch<TemperatureConverterBloc>();
-    final error = _isCelsius ? bloc.state.errorC : bloc.state.errorF;
+    final temp = _isCelsius ? bloc.state.C : bloc.state.F;
 
     return Row(
       children: [
@@ -69,9 +69,9 @@ class _EditorState extends State<_Editor> {
         Expanded(
           child: BlocListener<TemperatureConverterBloc, ConverterState>(
             listener: (context, state) {
-              final newText = _isCelsius ? state.C : state.F;
-              if (newText != controller.text) {
-                controller.text = newText;
+              final temp = _isCelsius ? state.C : state.F;
+              if (temp.value != controller.text) {
+                controller.text = temp.value;
               }
             },
             child: TextField(
@@ -79,7 +79,7 @@ class _EditorState extends State<_Editor> {
               onChanged: (value) => bloc.add(_event(value)),
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                filled: error,
+                filled: temp.error,
                 fillColor: const Color.fromARGB(116, 255, 17, 0),
               ),
             ),
