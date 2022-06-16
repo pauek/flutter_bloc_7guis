@@ -7,7 +7,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200]!,
+      backgroundColor: Colors.grey[300]!,
       body: ListView(
         children: const [
           _GUI(
