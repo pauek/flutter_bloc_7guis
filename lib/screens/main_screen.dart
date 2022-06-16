@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_7guis/components/temperature_converter.dart';
+import 'package:flutter_bloc_7guis/components/counter/counter.dart';
+import 'package:flutter_bloc_7guis/components/temperature_converter/temperature_converter.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class MainScreen extends StatelessWidget {
         children: const [
           _GUI(
             title: "Counter",
-            child: Text("hey1"),
+            child: Counter(),
           ),
           _GUI(
             title: "Temperature Converter",
